@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import register from '../../assets/login.png';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -9,6 +9,7 @@ import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
     const { handelSignup, googleSign } = useContext(AuthContext)
+    const [flag, setFlag] = useState(false)
     const navg = useNavigate()
     const Toast = Swal.mixin({
         toast: true,
@@ -26,7 +27,7 @@ const Register = () => {
     // from submit function 
     const handleFormSubmit = async (e) => {
         e.preventDefault();
-
+        setFlag(true)
         const formData = new FormData();
         const username = e.target.username.value;
         const email = e.target.email.value;
@@ -65,7 +66,7 @@ const Register = () => {
         if (response.data.success) {
             handelSignup(email, password)
                 .then(user => {
-
+                    setFlag(false)
                     updateProfile(auth.currentUser, {
                         displayName: username, photoURL: url
                     })
@@ -144,9 +145,17 @@ const Register = () => {
                                 <label htmlFor="photo" className="block text-gray-600">Photo</label>
                                 <input type="file" name="photo" className="file-input file-input-[#2d3c44] file-input-bordered w-full max-w-xs" />
                             </div>
-                            <button className="block w-full p-3 text-center hover:bg-color1 rounded-sm text-gray-50 bg-color2 duration-200">
-                                Sign in
-                            </button>
+                            {
+                                flag ?
+                                    
+                                    <button disabled className="block w-full p-3 text-center  rounded-sm text-gray-50 bg-[#80A5DC] ">
+                                    <span className="loading loading-bars loading-sm"></span>
+                                  </button>
+                                    :
+                                    <button  className="block w-full p-3 text-center hover:bg-color1 rounded-sm text-gray-50 bg-color2 duration-200">
+                                        Sign In
+                                    </button>
+                            }
                         </form>
                         <div className="flex items-center pt-4 space-x-1">
                             <div className="flex-1 h-px sm:w-16 bg-gray-300"></div>
