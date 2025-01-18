@@ -37,7 +37,7 @@ const Nav = () => {
         console.log(error)
       })
   }
-  console.log(user)
+  // console.log(user)
   return (
 
     <div className="navbar bg-base-100 max-w-screen-2xl mx-auto">
@@ -50,11 +50,10 @@ const Nav = () => {
       <div className="flex-none gap-2">
         {
           user ?
-            <div className="flex">
+            <div className="flex items-center gap-4">
               
-              <div className="form-control">
-                <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
-              </div>
+              <button className=" text-lg">About us</button>
+              <Link to={'/dashboard'} className=" text-lg">DashBoard</Link>
               <div className="dropdown dropdown-end">
                 <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                   <div className="w-10 rounded-full">

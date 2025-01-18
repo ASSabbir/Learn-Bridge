@@ -3,6 +3,7 @@ import login from '../../assets/register.png'
 import { useContext, useState } from 'react';
 import { AuthContext } from '../Main/AuthProvider';
 import Swal from 'sweetalert2';
+import axios from 'axios';
 
 const Login = () => {
     const { handelSignin, googleSign } = useContext(AuthContext)
@@ -74,6 +75,10 @@ const Login = () => {
                     icon: "success",
                     title: `WelCome ${user2.user.displayName} `
                 });
+                const user={email:user2.user.email,role:'Student'}
+                axios.post('http://localhost:5000/users', user)
+                    .then(res => console.log(res.data))
+                    .catch(error => { console.log(error) })
 
                 navg(location.state ? location.state : '/')
                 
@@ -136,7 +141,7 @@ const Login = () => {
                             </button>
 
                         </div>
-                        <p className="text-xs text-center sm:px-6 text-gray-600">Don't have an account?
+                        <p className="text-xs text-center sm:px-6 text-gray-600">Dont have an account?
                             <Link to={'/register'} className="underline text-gray-800">Sign up</Link>
                         </p>
                     </div>

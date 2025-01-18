@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import  { useContext, useState } from 'react';
 import register from '../../assets/login.png';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -76,8 +76,11 @@ const Register = () => {
                                 icon: "success",
                                 title: `WelCome ${auth.currentUser.displayName} `
                             });
-
-
+                            const user = { email, role }
+                            axios.post('http://localhost:5000/users', user)
+                                .then(res => console.log(res.data))
+                                .catch(error => { console.log(error) })
+                            navg(location.state ? location.state : '/')
                         }).catch((erro) => {
                             console.log(erro)
                         });
@@ -99,6 +102,11 @@ const Register = () => {
                     icon: "success",
                     title: `WelCome ${user2.user.displayName} `
                 });
+                console.log(user2.user.email)
+                const user={email:user2.user.email,role:'Student'}
+                axios.post('http://localhost:5000/users', user)
+                    .then(res => console.log(res.data))
+                    .catch(error => { console.log(error) })
 
                 navg(location.state ? location.state : '/')
 
@@ -147,12 +155,12 @@ const Register = () => {
                             </div>
                             {
                                 flag ?
-                                    
+
                                     <button disabled className="block w-full p-3 text-center  rounded-sm text-gray-50 bg-[#80A5DC] ">
-                                    <span className="loading loading-bars loading-sm"></span>
-                                  </button>
+                                        <span className="loading loading-bars loading-sm"></span>
+                                    </button>
                                     :
-                                    <button  className="block w-full p-3 text-center hover:bg-color1 rounded-sm text-gray-50 bg-color2 duration-200">
+                                    <button className="block w-full p-3 text-center hover:bg-color1 rounded-sm text-gray-50 bg-color2 duration-200">
                                         Sign In
                                     </button>
                             }
