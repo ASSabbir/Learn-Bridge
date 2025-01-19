@@ -11,6 +11,9 @@ import TuitorSessions from "../Dashboard/Tuitor/Tuitorsessions/TuitorSessions";
 import UploadMaterials from "../Dashboard/Tuitor/UploadMaterilas/UploadMaterials";
 import AllMaterials from "../Dashboard/Tuitor/ViewAll/AllMaterials";
 import SingleMaterials from "../Dashboard/Tuitor/UploadMaterilas/SingleMaterials";
+import AllUSer from "../Dashboard/Admin/AllUser/AllUSer";
+import ViewAllSessions from "../Dashboard/Admin/AllStudySessions/ViewAllSessions";
+import ViewAllMaterilas from "../Dashboard/Admin/All Materials/ViewAllMaterilas";
 
 const Routes = createBrowserRouter([
     {
@@ -50,7 +53,16 @@ const Routes = createBrowserRouter([
         },{
           path:'tuitor_materials/:id',
           element:<SingleMaterials></SingleMaterials>
-        },
+        },{
+          path:'admin_allusers',
+          element:<AllUSer></AllUSer>
+        },{
+          path:'admin_allsessions',
+          element:<ViewAllSessions></ViewAllSessions>
+        },{
+          path:'admin_allmaterials',
+          element:<ViewAllMaterilas></ViewAllMaterilas>
+        }
       ]
     }
   ]);

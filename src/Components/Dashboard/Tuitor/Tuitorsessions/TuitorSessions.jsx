@@ -4,7 +4,11 @@ import useTuitorSession from "../../../Hooks/useTuitorSession";
 const TuitorSessions = () => {
     const [sessions, isLoading, refetch] = useTuitorSession();
 
-    console.log(sessions)
+    if (isLoading) {
+        return <div className='flex items-center justify-center w-full pt-2 h-screen'>
+            <span className="loading loading-bars loading-lg"></span>
+        </div>
+    }
     return (
         <div className="p-6 bg-gray-200 space-y-4">
             <div className="p-6 sm:p-12 bg-gray-50 text-gray-800">

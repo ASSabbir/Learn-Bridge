@@ -6,7 +6,7 @@ import axios from 'axios';
 
 const SingleMaterials = () => {
     const { id } = useParams();
-    console.log(id)
+    
     const { user } = useContext(AuthContext)
     if (!user) {
         return <div className='flex items-center justify-center w-full pt-2 h-screen'>
