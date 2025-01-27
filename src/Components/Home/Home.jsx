@@ -1,6 +1,6 @@
 
 import Banner from './Banner';
-import Footer from './Footer';
+
 import Others from './Others';
 import OtherSecons from './OtherSecons';
 import SecondSection from './SecondSection';
