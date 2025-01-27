@@ -50,6 +50,7 @@ const Register = () => {
                 icon: "error",
                 title: ' Must be One UpperCase , One LowerCase & 6 Chareacter'
             });
+            setFlag(false)
             return
         }
 
@@ -77,7 +78,7 @@ const Register = () => {
                                 title: `WelCome ${auth.currentUser.displayName} `
                             });
                             const user = { email, role }
-                            axios.post('http://localhost:5000/users', user)
+                            axios.post('https://learnbridge-red.vercel.app/users', user)
                                 .then(res => console.log(res.data))
                                 .catch(error => { console.log(error) })
                             navg(location.state ? location.state : '/')
@@ -104,7 +105,7 @@ const Register = () => {
                 });
                 console.log(user2.user.email)
                 const user={email:user2.user.email,role:'Student'}
-                axios.post('http://localhost:5000/users', user)
+                axios.post('https://learnbridge-red.vercel.app/users', user)
                     .then(res => console.log(res.data))
                     .catch(error => { console.log(error) })
 
@@ -141,7 +142,7 @@ const Register = () => {
                                 <label htmlFor="role" className="block text-gray-600">Choose Role</label>
                                 <select name="role" defaultValue="Student" className="select select-bordered w-full border-2 px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800">
                                     <option className="text-gray-800">Student</option>
-                                    <option className="text-gray-800">Tutor</option>
+                                    <option className="text-gray-800">Tuitor</option>
                                     <option className="text-gray-800">Admin</option>
                                 </select>
                             </div>

@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDM5OkShDVsERdWOlyWtXHC1e56m-Y5t9c",
-  authDomain: "learnbridge-6f2b3.firebaseapp.com",
-  projectId: "learnbridge-6f2b3",
-  storageBucket: "learnbridge-6f2b3.firebasestorage.app",
-  messagingSenderId: "487741367587",
-  appId: "1:487741367587:web:5d45b26e01f57575049896"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId,
 };
 
 // Initialize Firebase

@@ -10,7 +10,7 @@ const ViewAllSessions = () => {
     const [activePage, setActivePage] = useState(0);
     // count data brom database
     useEffect(() => {
-        axios.get('http://localhost:5000/admin_sessions_count')
+        axios.get('https://learnbridge-red.vercel.app/admin_sessions_count')
             .then(res => setCont(res.data.count))
     })
 
@@ -22,7 +22,7 @@ const ViewAllSessions = () => {
     const { data: sessions = [], isLoading, refetch } = useQuery({
         queryKey: ['admin-session', activePage],
         queryFn: async () => {
-            const res = await axios.get(`http://localhost:5000/admin_allsessons?limit=6&skip=${activePage}`);
+            const res = await axios.get(`https://learnbridge-red.vercel.app/admin_allsessons?limit=6&skip=${activePage}`);
             return res.data;
         }
     })
@@ -54,7 +54,7 @@ const ViewAllSessions = () => {
 
             if (fee) {
                 const data = { id, fee }
-                axios.put(`http://localhost:5000/admin_approves/${data.id}`, data)
+                axios.put(`https://learnbridge-red.vercel.app/admin_approves/${data.id}`, data)
                     .then(res => {
                         if (res.data.acknowledged == true) {
                             Swal.fire({
@@ -91,7 +91,7 @@ const ViewAllSessions = () => {
                 }
             });
             if (formValues) {
-                axios.put(`http://localhost:5000/admin_rejected/${id}`, formValues)
+                axios.put(`https://learnbridge-red.vercel.app/admin_rejected/${id}`, formValues)
                     .then(res => {
                         if (res.data.acknowledged == true) {
                             Swal.fire({
@@ -124,7 +124,7 @@ const ViewAllSessions = () => {
             if (result.isConfirmed) {
 
 
-                axios.delete(`http://localhost:5000/session/${id}`)
+                axios.delete(`https://learnbridge-red.vercel.app/session/${id}`)
                     .then(res => {
                         if (res.data.acknowledged == true) {
                             Swal.fire({
@@ -166,7 +166,7 @@ const ViewAllSessions = () => {
 
         if (fee) {
             const data = { id, fee }
-            axios.put(`http://localhost:5000/admin_approves/${data.id}`, data)
+            axios.put(`https://learnbridge-red.vercel.app/admin_approves/${data.id}`, data)
                 .then(res => {
                     if (res.data.acknowledged == true) {
                         Swal.fire({

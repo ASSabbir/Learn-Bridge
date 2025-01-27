@@ -3,10 +3,11 @@ import axios from 'axios';
 
 
 const useTuitorSession = () => {
+    
     const {data:sessions=[],isLoading,refetch }=useQuery({
         queryKey: ['tuitor-session'],
         queryFn: async () => {
-            const res=await axios.get('http://localhost:5000/sessions');
+            const res=await axios.get('https://learnbridge-red.vercel.app/sessions');
             return res.data;
         }
     })

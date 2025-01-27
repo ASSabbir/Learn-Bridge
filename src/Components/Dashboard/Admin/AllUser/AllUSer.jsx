@@ -37,7 +37,7 @@ const AllUSer = () => {
         });
 
         if (confirmation && confirmation.toLowerCase() === 'confirm') {
-            axios.put(`http://localhost:5000/admin_users/${id}`)
+            axios.put(`https://learnbridge-red.vercel.app/admin_users/${id}`)
                 .then(res => {
                     console.log(res.data)
                     if (res.data.acknowledged == true) {
@@ -46,6 +46,7 @@ const AllUSer = () => {
                             text: "User is now Admin",
                             icon: "success"
                         });
+                        refetch()
                     }
                 })
         }

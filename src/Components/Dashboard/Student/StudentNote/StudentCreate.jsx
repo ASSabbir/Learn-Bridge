@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
+import  { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { AuthContext } from '../../../Main/AuthProvider';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 
-const SingleMaterials = () => {
+const StudentCreate = () => {
     const { id } = useParams();
     
     const { user } = useContext(AuthContext)
@@ -18,19 +18,15 @@ const SingleMaterials = () => {
         const formData = new FormData();
         const title = e.target.title.value;
         const description = e.target.description.value;
-        const driveLink = e.target.duration.value;
-        const sessionId = e.target.status.value;
-        const tuitorEmail = user.email;
-        const tuitorUsername = user.displayName;
+        const studentEmail = user.email;
+        const studentUsername = user.displayName;
         const photoFile = e.target.photo.files[0];
-        // Logging the values to the console for testing
+        
         const material = {
             title,
             description,
-            driveLink,
-            sessionId,
-            tuitorEmail,
-            tuitorUsername
+            studentEmail,
+            studentUsername
 
         }
         console.log(material)
@@ -55,13 +51,13 @@ const SingleMaterials = () => {
                 
                 const newMaterial = { ...material, photo: url }
                 
-                axios.post('https://learnbridge-red.vercel.app/materials', newMaterial)
+                axios.post('https://learnbridge-red.vercel.app/students_notes', newMaterial)
                     .then(res => {
                         console.log(res.data)
                         if (res.data.acknowledged == true) {
                             Swal.fire({
                                 title: " Done!",
-                                text: "Now your student can see your materials. ",
+                                text: "Now you can see your personalNotes. ",
                                 icon: "success"
                             });
                         }
@@ -86,28 +82,21 @@ const SingleMaterials = () => {
                 <form onSubmit={handelSerssion} className="container flex flex-col mx-auto space-y-12 w-full">
                     <div className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm bg-gray-50">
                         <div className="space-y-2 col-span-full lg:col-span-1">
-                            <p className="font-medium text-xl font-Noto">Materials Information</p>
-                            <p className="text-xs text-gray-500 font-Noto"> Provide them with well-structured study materials and a clear roadmap to achieve their goals. Tailored sessions ensure every student gets the support they need to succeed.</p>
+                            <p className="font-medium text-xl font-Noto">Notes Information</p>
+                            <p className="text-xs text-gray-500 font-Noto">Student notes are comprehensive, well-structured materials designed to enhance understanding and support academic success. These notes serve as a clear roadmap, breaking down complex topics into digestible sections and summarizing key concepts for easier retention. </p>
                         </div>
                         <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
                             <div className="col-span-full sm:col-span-3">
-                                <label className="text-sm">Material Title</label>
+                                <label className="text-sm">Note Title</label>
                                 <input name="title" type="text" placeholder="Title" className="w-full rounded-md p-2 border-[1px] text-gray-900" />
                             </div>
                             <div className="col-span-full sm:col-span-3">
-                                <label className="text-sm">Material Description</label>
+                                <label className="text-sm">Note Description</label>
                                 <input name="description" type="text" placeholder="Description" className="w-full rounded-md text-gray-900 p-2 border-[1px]" />
                             </div>
                             
                             
-                            <div className="col-span-full sm:col-span-4">
-                                <label className="text-sm">Google Drive link</label>
-                                <input name="duration" type="text" placeholder="http://" className="w-full rounded-md text-gray-900 p-2 border-[1px]" />
-                            </div>
-                            <div className="col-span-full sm:col-span-2">
-                                <label className="text-sm">Study session ID</label>
-                                <input name="status" type="text" disabled defaultValue={id} className="w-full rounded-md text-gray-500 p-2 border-[1px]" />
-                            </div>
+                            
                            
                             <div className="space-y-1 text-sm col-span-full sm:col-span-3">
                                 <label  className="block ">Provide a photo</label>
@@ -118,7 +107,7 @@ const SingleMaterials = () => {
                     <div className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm bg-gray-50">
                         <div className="space-y-2 col-span-full lg:col-span-1">
                             <p className="font-medium text-xl font-Noto">Personal Information</p>
-                            <p className="text-xs font-Noto text-gray-500">As a tutor, this section showcases your personal information to help students know you better.</p>
+                            <p className="text-xs font-Noto text-gray-500">As a Student, this section showcases your personal information .</p>
                         </div>
                         <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
                             <div className="col-span-full sm:col-span-3">
@@ -133,7 +122,7 @@ const SingleMaterials = () => {
                     </div>
                     <div className="p-6 rounded-md shadow-sm bg-gray-50">
                         <button type="submit" className="px-4 text-xl font-Noto py-2 w-full hover:bg-color1 hover:text-white rounded-md border-gray-800">
-                            Give Material
+                            Post
                         </button>
                     </div>
                 </form>
@@ -143,4 +132,4 @@ const SingleMaterials = () => {
     );
 };
 
-export default SingleMaterials;
+export default StudentCreate;

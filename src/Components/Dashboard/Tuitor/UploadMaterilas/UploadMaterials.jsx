@@ -1,9 +1,18 @@
-import React from 'react';
+import  { useEffect, useState } from 'react';
 import useTuitorSession from '../../../Hooks/useTuitorSession';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { useQuery } from '@tanstack/react-query';
 
 const UploadMaterials = () => {
-    const [sessions, isLoading, refetch] = useTuitorSession();
+    
+    const {data:sessions=[],isLoading,refetch }=useQuery({
+        queryKey: ['approve-session'],
+        queryFn: async () => {
+            const res=await axios.get('https://learnbridge-red.vercel.app/sessions/approve');
+            return res.data;
+        }
+    })
     return (
         <div>
             <div className="p-6 bg-gray-200 space-y-4">

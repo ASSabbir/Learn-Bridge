@@ -9,7 +9,7 @@ const useMaterials = () => {
     const {data:materials=[],isLoading,refetch }=useQuery({
         queryKey: ['tuitor-session'],
         queryFn: async () => {
-            const res=await axios.get(`http://localhost:5000/materials?email=${user.email?user.email:''}`);
+            const res=await axios.get(`https://learnbridge-red.vercel.app/materials?email=${user.email?user.email:''}`);
             return res.data;
         }
     })

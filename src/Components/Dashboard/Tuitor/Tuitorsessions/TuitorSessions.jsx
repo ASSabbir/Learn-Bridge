@@ -1,14 +1,39 @@
+import axios from "axios";
 import useTuitorSession from "../../../Hooks/useTuitorSession";
+import Swal from "sweetalert2";
+import { IoWarningOutline } from "react-icons/io5";
+import { useEffect, useState } from "react";
 
 
 const TuitorSessions = () => {
     const [sessions, isLoading, refetch] = useTuitorSession();
-
+    const [reject,setreject]=useState([]);
+    
+    useEffect(()=>{
+        axios.get('https://learnbridge-red.vercel.app/rejected_reason')
+        .then(res=>{
+            setreject(res.data)
+        })
+    },[])
     if (isLoading) {
         return <div className='flex items-center justify-center w-full pt-2 h-screen'>
             <span className="loading loading-bars loading-lg"></span>
         </div>
     }
+    const handelrejected = async (id) => {
+        await axios.put(`https://learnbridge-red.vercel.app/session_approves_request/${id}`,)
+            .then(res => {
+                if (res.data.acknowledged == true) {
+                    Swal.fire({
+                        title: "Request Send!",
+                        icon: "success",
+                        draggable: true
+                    });
+                    refetch()
+                }
+            })
+    }
+    
     return (
         <div className="p-6 bg-gray-200 space-y-4">
             <div className="p-6 sm:p-12 bg-gray-50 text-gray-800">
@@ -25,7 +50,7 @@ const TuitorSessions = () => {
                 {sessions.map((course) => (
                     <div
                         key={course._id}
-                        className="bg-white rounded-lg shadow-md overflow-hidden"
+                        className="bg-white rounded-lg shadow-md "
                     >
                         <img
                             src={course.photo}
@@ -48,8 +73,16 @@ const TuitorSessions = () => {
                                 Instructor: {course.tuitorUsername} (
                                 {course.tuitorEmail})
                             </p>
-                            <button className="bg-color2 text-white px-2 py-1 rounded-sm">{course.status}</button>
-                            <button className="bg-green-400 text-white px-2 py-1 rounded-sm">{course.status}</button>
+                            <div className="divider"></div>
+                            {
+                                course.status === "Pending" ? <button className="bg-color2 text-white px-2 py-1 rounded-sm">{course.status}</button> : course.status === "Approved" ? <button className="bg-green-400 text-white px-2 py-1 rounded-sm">{course.status}</button> : <div className="flex items-center justify-between">
+                                    <button onClick={() => handelrejected(course._id)} className="bg-red-500 text-white px-2 py-1 rounded-sm">{course.status}</button>
+                                    <div className="lg:tooltip cursor-pointer" data-tip={`Reason : ${reject.find(p => p.sessionId === course._id)?.reason || "No reason available"}`}>
+                                        <IoWarningOutline className="text-2xl text-red-500" />
+                                    </div>
+                                </div>
+                            }
+
                         </div>
                     </div>
                 ))}

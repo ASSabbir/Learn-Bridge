@@ -76,7 +76,7 @@ const Login = () => {
                     title: `WelCome ${user2.user.displayName} `
                 });
                 const user={email:user2.user.email,role:'Student'}
-                axios.post('http://localhost:5000/users', user)
+                axios.post('https://learnbridge-red.vercel.app/users', user)
                     .then(res => console.log(res.data))
                     .catch(error => { console.log(error) })
 

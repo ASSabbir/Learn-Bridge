@@ -28,8 +28,9 @@ const AuthProvider = ({children}) => {
             
             setUser(currentUser)
             setLoading(false)
+            // console.log(currentUser.email)
+            localStorage.setItem('user',JSON.stringify(currentUser.email))
             
-
         })
         return()=>{
             unsub();

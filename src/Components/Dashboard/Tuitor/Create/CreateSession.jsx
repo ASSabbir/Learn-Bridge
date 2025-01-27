@@ -62,7 +62,7 @@ const CreateSession = () => {
                 
                 const newSession = { ...session, photo: url }
                 
-                axios.post('http://localhost:5000/sessions', newSession)
+                axios.post('https://learnbridge-red.vercel.app/sessions', newSession)
                     .then(res => {
 
                         if (res.data.acknowledged == true) {

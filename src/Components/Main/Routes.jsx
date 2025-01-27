@@ -14,6 +14,16 @@ import SingleMaterials from "../Dashboard/Tuitor/UploadMaterilas/SingleMaterials
 import AllUSer from "../Dashboard/Admin/AllUser/AllUSer";
 import ViewAllSessions from "../Dashboard/Admin/AllStudySessions/ViewAllSessions";
 import ViewAllMaterilas from "../Dashboard/Admin/All Materials/ViewAllMaterilas";
+import AdminPrivate from "../Private/AdminPrivate";
+import StudentSession from "../Dashboard/Student/StudentSession/StudentSession";
+import StudentCreate from "../Dashboard/Student/StudentNote/StudentCreate";
+import StudentNav from "../Dashboard/Student/StudentNav";
+import StudentNotes from "../Dashboard/Student/ManageNote/StudentNotes";
+import StudentStudyMaterilas from "../Dashboard/Student/StudyMaterials/StudentStudyMaterilas";
+import Details from "../Home/Details";
+import UserPrivate from "../Private/UserPrivate";
+import AllSessions from "../Home/AllSessions";
+
 
 const Routes = createBrowserRouter([
     {
@@ -25,13 +35,27 @@ const Routes = createBrowserRouter([
             element:<Home></Home>
         },
         {
+          path:'/session/:id',
+          element:<UserPrivate><Details></Details></UserPrivate>
+        },
+
+        {
             path:'/login',
             element:<Login></Login>
+        },
+        {
+            path:'/allsessions',
+            element:<AllSessions></AllSessions>
         },
         {
             path:'/register',
             element:<Register></Register>
         }
+        ,
+        // {
+        //     path:'/session/payment/:id',
+        //     element:<Payment></Payment>
+        // }
       ]
     },
     {
@@ -55,13 +79,29 @@ const Routes = createBrowserRouter([
           element:<SingleMaterials></SingleMaterials>
         },{
           path:'admin_allusers',
-          element:<AllUSer></AllUSer>
+          element:<AdminPrivate><AllUSer></AllUSer></AdminPrivate>
         },{
           path:'admin_allsessions',
-          element:<ViewAllSessions></ViewAllSessions>
+          element:<AdminPrivate><ViewAllSessions></ViewAllSessions></AdminPrivate>
         },{
           path:'admin_allmaterials',
-          element:<ViewAllMaterilas></ViewAllMaterilas>
+          element:<AdminPrivate><ViewAllMaterilas></ViewAllMaterilas></AdminPrivate>
+        }
+        ,{
+          path:'student_booked_sessions',
+          element:<StudentSession></StudentSession>
+        }
+        ,{
+          path:'student_create_note',
+          element:<StudentCreate></StudentCreate>
+        }
+        ,{
+          path:'student_personal_notes',
+          element:<StudentNotes></StudentNotes>
+        }
+        ,{
+          path:'student_materials',
+          element:<StudentStudyMaterilas></StudentStudyMaterilas>
         }
       ]
     }

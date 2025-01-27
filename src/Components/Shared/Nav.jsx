@@ -32,6 +32,7 @@ const Nav = () => {
           icon: "success",
           title: `Bye See You Again`
         });
+        localStorage.removeItem('user')
       })
       .catch(error => {
         console.log(error)

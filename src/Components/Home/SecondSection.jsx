@@ -8,7 +8,7 @@ import { TiSocialFacebook } from 'react-icons/ti';
 const SecondSection = () => {
     return (
         <section className="p-8 bg-color1 text-white">
-            <div className="container mx-auto grid justify-center grid-cols-2 text-center lg:grid-cols-4">
+            <div className=" mx-auto grid justify-center grid-cols-2 text-center md:grid-cols-4">
                 <div className="flex flex-col justify-center items-center space-y-3  lg:m-6">
                     <HiMiniAcademicCap className='text-3xl md:text-5xl text-color3 ' />
                     <p className="text-2xl md:text-4xl font-bold leading-none lg:text-6xl">500+</p>
