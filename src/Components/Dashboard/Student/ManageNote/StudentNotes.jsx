@@ -8,7 +8,7 @@ const StudentNotes = () => {
     const { user } = useContext(AuthContext)
     const email = localStorage.getItem('user')
     console.log(email)
-    const { data: notes = [], isLoading, refetch } = useQuery({
+    const { data: notes = [], refetch } = useQuery({
         queryKey: ['notes'],
         queryFn: async () => {
             const res = await axios.get(`https://learnbridge-red.vercel.app/students_notes?email=${email}`);
