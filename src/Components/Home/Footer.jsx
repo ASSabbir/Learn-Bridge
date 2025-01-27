@@ -1,4 +1,4 @@
-import React from 'react';
+
 import img from '../../assets/icons8-book-96.png'
 
 const Footer = () => {
