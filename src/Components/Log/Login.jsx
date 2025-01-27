@@ -40,6 +40,8 @@ const Login = () => {
                 });
                 console.log(user2)
 
+
+                
                 // const user = { email: email }
                 // console.log(user)
                 // axios.post('https://motorent-beta.vercel.app/jwt',user,{withCredentials:true})
