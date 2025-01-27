@@ -4,7 +4,6 @@ import { useContext } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../../Main/AuthProvider";
 
-
 const StudentNotes = () => {
     const { user } = useContext(AuthContext)
     const email = localStorage.getItem('user')
