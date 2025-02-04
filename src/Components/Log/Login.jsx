@@ -30,6 +30,7 @@ const Login = () => {
                 icon: "error",
                 title: 'All fields must be filled out.'
             });
+            setFlag(false)
             return
         }
         
@@ -66,6 +67,7 @@ const Login = () => {
                     icon: "error",
                     title: error.code
                 });
+                setFlag(false)
             })
 
     }

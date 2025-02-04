@@ -40,6 +40,7 @@ const Register = () => {
                 icon: "error",
                 title: 'All fields must be filled out.'
             });
+            setFlag(false)
             return
         }
 
@@ -93,7 +94,11 @@ const Register = () => {
                         icon: "error",
                         title: error
                     });
+                    setFlag(false)
                 })
+        }
+        else{
+            setFlag(false)
         }
     };
     const handelgoogle = () => {

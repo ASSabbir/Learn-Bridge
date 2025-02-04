@@ -1,108 +1,88 @@
-# Collaborative Study Platform
+<p align="center">
+  <img src="YOUR_BANNER_IMAGE_URL_HERE" alt="Collaborative Study Platform Banner" />
+</p>
 
-This platform connects students, tutors, and administrators to streamline study session scheduling, resource sharing, and user management. It enhances collaboration, improves access to study materials, and ensures effective management of educational activities.
+<h1 align="center">📚 Collaborative Study Platform</h1>
 
----
-
-## Website Features
-
-- **User Registration & Login**: 
-  - Students, Tutors, and Administrators can register and log in to the platform.
-  - Social login via Google and GitHub is also supported (students by default).
-
-- **Role-Based Access Control**: 
-  - Students, Tutors, and Admins have different levels of access, ensuring each user type only has access to appropriate features.
-  - Admin can manage users and approve/reject study sessions.
-
-- **Study Sessions**: 
-  - Students can browse available sessions, view session details, and book them (paid or free).
-  - Tutors can create study sessions, manage session details, and upload materials.
-  - Admin can approve or reject study sessions and manage users.
-
-- **Dashboard**:
-  - **Student Dashboard**: View booked sessions, create and manage personal notes, and access study materials for booked sessions.
-  - **Tutor Dashboard**: Create study sessions, upload study materials, and manage sessions.
-  - **Admin Dashboard**: View and manage all users, sessions, and materials.
-
-- **Responsive Design**:
-  - The platform is fully responsive, ensuring an optimized experience on mobile, tablet, and desktop devices.
-
-- **Real-time Notifications**: 
-  - Sweet alert notifications for CRUD operations, login/signup success, and booking confirmation.
-
-- **Secure Authentication**:
-  - JWT-based authentication for login.
-  - Secure token storage in localStorage for session management.
-
-- **Pagination**: 
-  - Implemented pagination on two different pages to manage large datasets.
-
-- **Environment Variables**:
-  - Firebase config and MongoDB credentials are stored securely in environment variables.
-
-- **Payment Integration**:
-  - For paid study sessions, users can proceed to a payment page after clicking "Book Now."
-
-- **Reviews and Ratings**:
-  - Students can rate and review sessions after attending.
+<p align="center">
+  A modern web platform that connects students, tutors, and administrators for seamless study session scheduling, resource sharing, and user management.
+</p>
 
 ---
 
-## Admin Credentials
+## 🌟 Website Features  
 
-- **Admin Username**: admin@studyplatform.com
-- **Admin Password**: admin123
+✅ **User Registration & Login**  
+- Secure login for **Students, Tutors, and Admins**  
+- **Google & GitHub OAuth login** (students by default)  
 
----
+✅ **Role-Based Access Control**  
+- Different access levels for **Students, Tutors, and Admins**  
+- Admins can **approve/reject study sessions** and **manage users**  
 
-## Front-end Live Site Link
-LearnBridge
-[LearnBridge](https://learnbridge-6f2b3.web.app/)
+✅ **Study Sessions**  
+- Students can **browse & book** sessions (free or paid)  
+- Tutors can **create & manage** study sessions  
+- Admins can **approve/reject** sessions  
 
----
+✅ **Dashboard System**  
+- 📖 **Student Dashboard**: Booked sessions, personal notes, study materials  
+- 🎓 **Tutor Dashboard**: Create sessions, upload materials, manage students  
+- 🛠 **Admin Dashboard**: Manage users, sessions, approvals  
 
-## GitHub Repositories
-
-### Client Side:
-- **GitHub Repository Link**: [Client Side Repo](https://github.com/your-username/client-repo)
-
-### Server Side:
-- **GitHub Repository Link**: [Server Side Repo](https://github.com/your-username/server-repo)
-
----
-
-## Technologies Used
-
-- **Frontend**: React, Tailwind CSS, React Router, Tanstack Query, Axios
-- **Backend**: Node.js, Express, MongoDB, JWT, Firebase Authentication
-- **Payment**: Integrated payment for paid sessions
-- **Version Control**: Git & GitHub for source code management
+✅ **Additional Features**  
+- 📢 **Real-time Notifications** for CRUD operations, logins, and bookings  
+- 🔑 **JWT-based Authentication** with secure session management  
+- 📑 **Pagination** for large datasets  
+- 🌐 **Fully Responsive** (mobile, tablet, desktop)  
+- 💳 **Payment Integration** for paid study sessions  
+- ⭐ **Reviews & Ratings** system for students  
 
 ---
 
-## Setup Instructions
+## 🔑 **Admin Credentials**  
 
-1. Clone the repository to your local machine.
-2. Install dependencies using `npm install`.
-3. Create a `.env` file for environment variables, including your Firebase and MongoDB credentials.
-4. Start the backend server: 
-   - Run `npm start` in the server directory.
-5. Start the frontend application:
-   - Run `npm start` in the client directory.
-6. Visit `http://localhost:3000` to view the application locally.
+📧 **Admin Username**: `admin@gmail.com`  
+🔑 **Admin Password**: `********`  
 
 ---
 
-## Notes
+## 🌎 **Live Website**  
 
-- Ensure the database collections are properly set up as mentioned in the project requirements.
-- The frontend and backend are connected through API requests to handle sessions, bookings, and user management.
-- Follow the project requirements strictly to ensure all functionality is implemented correctly.
+🔗 **[LearnBridge](https://learnbridge-6f2b3.web.app/)**  
 
 ---
 
-### Acknowledgements
-
-- Thanks to the open-source community for the libraries and tools used in this project.
 
 
+## 🛠 **Technologies Used**  
+
+### **Frontend**  
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)  
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)  
+![Tanstack Query](https://img.shields.io/badge/Tanstack_Query-FF4154?style=for-the-badge&logo=react-query&logoColor=white)  
+![Axios](https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge)  
+
+### **Backend**  
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)  
+![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)  
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)  
+![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=jsonwebtoken)  
+
+### **Authentication & Deployment**  
+![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)  
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)  
+
+### **Version Control**  
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)  
+
+---
+
+## ⚙️ **Setup Instructions**  
+
+### **Frontend Setup**  
+```sh
+git clone https://github.com/your-username/client-repo.git
+cd client-repo
+npm install
+npm start
