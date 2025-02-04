@@ -1,5 +1,6 @@
 <p align="center">
-  <img src="YOUR_BANNER_IMAGE_URL_HERE" alt="Collaborative Study Platform Banner" />
+  <img src="Learn-Bridge/public
+/banner.PNG" alt="Collaborative Study Platform Banner" />
 </p>
 
 <h1 align="center">📚 Collaborative Study Platform</h1>
