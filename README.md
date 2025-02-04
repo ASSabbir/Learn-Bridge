@@ -1,6 +1,5 @@
 <p align="center">
-  <img src="Learn-Bridge/public
-/banner.PNG" alt="Collaborative Study Platform Banner" />
+  <img src="https://raw.githubusercontent.com/ASSabbir/Learn-Bridge/refs/heads/main/public/banner.PNG" alt="Collaborative Study Platform Banner" />
 </p>
 
 <h1 align="center">📚 Collaborative Study Platform</h1>
