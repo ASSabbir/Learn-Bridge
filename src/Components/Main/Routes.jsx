@@ -23,6 +23,8 @@ import StudentStudyMaterilas from "../Dashboard/Student/StudyMaterials/StudentSt
 import Details from "../Home/Details";
 import UserPrivate from "../Private/UserPrivate";
 import AllSessions from "../Home/AllSessions";
+import Profile from "../Shared/Profile";
+import AboutUs from "../Shared/AboutUs";
 
 
 const Routes = createBrowserRouter([
@@ -37,6 +39,10 @@ const Routes = createBrowserRouter([
         {
           path:'/session/:id',
           element:<UserPrivate><Details></Details></UserPrivate>
+        },
+        {
+          path:'/about_us',
+          element:<AboutUs></AboutUs>
         },
 
         {
@@ -102,6 +108,10 @@ const Routes = createBrowserRouter([
         ,{
           path:'student_materials',
           element:<StudentStudyMaterilas></StudentStudyMaterilas>
+        }
+        ,{
+          path:'user_profile',
+          element:<UserPrivate><Profile></Profile></UserPrivate>
         }
       ]
     }

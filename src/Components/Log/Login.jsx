@@ -101,7 +101,7 @@ const Login = () => {
                 <div className="text-center w-1/2 lg:text-left ">
                     <img src={login} alt="" />
                 </div>
-                <div className="card bg-base-100 w-1/2   max-w-sm shrink-0 ">
+                <div className="card bg-white w-1/2   max-w-sm shrink-0 ">
                     <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-gray-50 text-gray-800">
                         <h1 className="text-4xl text-color1 font-bold text-center">Login</h1>
                         <form onSubmit={handelSubmit} className="space-y-6">

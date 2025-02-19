@@ -89,7 +89,7 @@ const AdminNav = () => {
                     </ul>
                 </div>
                 <ul className="menu px-3  w-full  text-white  p-0 [&_li>*]:rounded-none">
-                    <li className='hover:bg-color1 hover:text-white active:bg-color1'><Link>Settings</Link></li>
+                <li className='hover:bg-color1 hover:text-white active:bg-color1'><Link to={'user_profile'}>Profile</Link></li>
                     <div className="divider"></div>
                     {
                         loading ?

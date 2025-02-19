@@ -131,7 +131,7 @@ const Register = () => {
                 <div className="text-center md:w-1/2 lg:text-left">
                     <img src={register} alt="Register" className="md:w-[44vw]" />
                 </div>
-                <div className="card bg-base-100 md:w-1/2 w-full max-w-sm shrink-0">
+                <div className="card bg-white md:w-1/2 w-full max-w-sm shrink-0">
                     <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-gray-50 text-gray-800">
                         <h1 className="text-4xl text-color1 font-bold text-center">Register</h1>
                         <form onSubmit={handleFormSubmit} className="space-y-4">

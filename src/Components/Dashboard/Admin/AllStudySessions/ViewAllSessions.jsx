@@ -19,7 +19,7 @@ const ViewAllSessions = () => {
     const pages = [...Array(numberofPage).keys()]
 
     // fetch data from database
-    const { data: sessions = [], isLoading, refetch } = useQuery({
+    const { data: sessions = [],isLoading,refetch } = useQuery({
         queryKey: ['admin-session', activePage],
         queryFn: async () => {
             const res = await axios.get(`https://learnbridge-red.vercel.app/admin_allsessons?limit=6&skip=${activePage}`);

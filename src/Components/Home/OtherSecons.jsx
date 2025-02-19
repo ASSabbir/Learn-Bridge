@@ -2,7 +2,7 @@
 
 const OtherSecons = () => {
     return (
-        <section className=" text-gray-800 mt-20">
+        <section className=" text-gray-800 mt-32">
             <div className="container flex flex-col justify-center p-4 mx-auto md:p-8">
 
                 <h2 className="mb-12 text-4xl font-bold leading-none text-center sm:text-5xl">Our Tuitors</h2>
